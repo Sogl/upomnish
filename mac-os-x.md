@@ -7,6 +7,12 @@
 sudo lsof -i -n -P | grep TCP
 ```
 
+## DNS
+
+Очистить кэш:
+```
+sudo dscacheutil -flushcache
+```
 
 ## MySQL
 
@@ -30,6 +36,24 @@ sudo launchctl load -F /Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist
 /usr/local/mysql/support-files/my-default.cnf
 ```
 
+# Network
+
+Узнать IP домена:
+
+1) Так:
+```
+dig +short example.com
+```
+2) Или так:
+```
+host example.com
+```
+3) Или так:
+```
+nslookup example.com
+```
+
+
 ## Apache
 
 Запуск от имени текущего пользователя.
@@ -52,6 +76,12 @@ https://apple.stackexchange.com/a/46219
 ssh root@IPaddress
 ```
 
+С портом и ssh-ключом:
+```
+ssh user@host -p port -i ~/.ssh/key
+```
+
+
 Обновление PATH переменных:
 ```
 source ~/.bashrc
@@ -64,11 +94,22 @@ source ~/.bashrc
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 ```
 
-# Документы
+## Документы
 
-Сконвертировать .docx в markdown с выгрузкой изображений (формат GithubFlavouredMarkdown):
+Сконвертировать .docx в markdown (с выгрузкой изображений в папку `media`, формат GithubFlavouredMarkdown, без разрывов строк):
 ```
 pandoc -f docx -t markdown foo.docx -o foo.md --extract-media=./ -t gfm --wrap=none
 ```
 Предварительно нужно установить pandoc `brew install pandoc`
 
+
+## Снять атрибут карантина
+
+Помогает для VST что нельзя снять через системные настройки (r — рекурсивно):
+```
+sudo xattr -rd com.apple.quarantine LOADED.vst3
+```
+
+## Xdebug
+
+Настройка: https://javorszky.co.uk/2018/05/03/getting-xdebug-working-on-php-7-2-and-homebrew/

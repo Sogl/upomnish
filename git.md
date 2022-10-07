@@ -1,5 +1,10 @@
 # git
 
+## Клонировать инициализируя подмодули:
+```
+git clone --recurse-submodules git@repo.git
+```
+
 ## SSH-ключ для деплоя
 
 **SSH ключ** чтобы работал для клонирования репозитория на Bitbucket (кастомный ключ):
@@ -37,7 +42,7 @@ git stash drop
 
 ## Удалить коммит(ы)
 
-Удалить последние коммиты в локальном репо:
+Удалить последние коммиты в локальном репо (!с осторожностью, может удалить локальные файлы):
 ```
 git reset --hard <hash of needed commit>
 ```
@@ -46,3 +51,15 @@ git reset --hard <hash of needed commit>
 ```
 git push --force -u origin
 ```
+
+## Удаление DS_Store
+
+Команда покажет списком и удалит все DS_Store с проекта:
+```
+find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
+```
+
+## Rebase, merge итп
+
+Про слияние и перебазирование:
+https://www.atlassian.com/ru/git/tutorials/merging-vs-rebasing

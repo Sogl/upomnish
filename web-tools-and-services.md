@@ -22,9 +22,26 @@ https://convertcase.net/ru/
 Быстро добавить номера к каждой строке:
 https://www.gillmeister-software.com/online-tools/text/numbering-lines.aspx
 
+Юникод-конвертер (конвертирую ссылки из русского в %-код):
+https://r12a.github.io/app-conversion/
+
 Облачное тестирование сайта в разных мобильных средах (бесплатно 6 раз по 5 минут вроде):
 https://www.lambdatest.com/
 
+Генератор email-ссылок mailto (кому, копия, скрытая копия, тема письма, содержание) в одну строку:
+https://mailtolink.me/
+
+Выгрузить в архив все изображения из загруженного pdf-файла:
+https://tools.pdf24.org/ru/extract-images
+
+Онлайн-клавиатура чтобы проверить какие клавиши нажимаются (для Хакинтошника как я):
+https://en.key-test.ru/
+
+Безопасные web-цвета (палитра):
+https://www.w3schools.com/tags/ref_colornames.asp
+
+Склеить 2 изображения онлайн:
+https://pinetools.com/merge-images
 
 ## PHP
 
