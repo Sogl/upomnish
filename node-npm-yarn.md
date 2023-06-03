@@ -15,3 +15,6 @@ npm install --save loopback
 npm install --save --save-exact loopback#2.18.0
 ```
 
+Установка на шаред:
+https://medium.com/@SimonEast/how-to-install-node-js-on-cpanel-shared-hosting-66b4ac3183cf
+

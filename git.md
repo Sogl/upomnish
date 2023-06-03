@@ -40,6 +40,11 @@ git stash
 git stash drop
 ```
 
+Вариант 2 — отмена для конкретного файла:
+```
+git checkout filename
+```
+
 ## Удалить коммит(ы)
 
 Удалить последние коммиты в локальном репо (!с осторожностью, может удалить локальные файлы):
@@ -63,3 +68,22 @@ find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
 
 Про слияние и перебазирование:
 https://www.atlassian.com/ru/git/tutorials/merging-vs-rebasing
+
+## Обновить gitignore
+
+1. Make changes in `.gitignore` file.
+2. Run `git rm -r --cached .` command.
+3. Run `git add .` command
+4. `git commit -m "Commit message"` or just `git commit` or continue working.
+
+https://sigalambigha.home.blog/2020/03/11/how-to-refresh-gitignore/
+
+
+## Получить изменения из продакшена, когда дев/локальная версия улетела вперед
+
+1. Добавляем изменения: `git add .`
+2. Коммитим: `git commit -m "My new commit"`
+3. Получаем историю коммитов (!файлы при этом не изменяются): `git fetch origin`
+4. Переносим наши изменения наверх истории: `git rebase origin/master`
+5. Отправляем на git-хостинг: `git push origin master:master`
+6. Остается только получить их в локальной версии: `git pull` или в приложении.

@@ -7,6 +7,15 @@
 sudo lsof -i -n -P | grep TCP
 ```
 
+## brew
+
+Установка с отключением автообновления:
+```
+HOMEBREW_NO_AUTO_UPDATE=1 brew install <formula>
+```
+
+Более подробно: https://computingforgeeks.com/prevent-homebrew-auto-update-on-macos/
+
 ## DNS
 
 Очистить кэш:
@@ -113,3 +122,20 @@ sudo xattr -rd com.apple.quarantine LOADED.vst3
 ## Xdebug
 
 Настройка: https://javorszky.co.uk/2018/05/03/getting-xdebug-working-on-php-7-2-and-homebrew/
+
+## Spotlight
+
+Если достал при загрузке процесс mds_stores, следующая команда позволит увидеть чем он вообще в файловой системе занимается:
+```
+sudo fs_usage -w -f filesys mdworker_shared
+```
+Ненужные для индексации папки потом можно упрятать в исключения в настройках.
+
+Связанные ссылки:
+https://apple.stackexchange.com/questions/144474/mds-and-mds-stores-constantly-consuming-cpu
+https://apple.stackexchange.com/questions/162227/how-to-isolate-processes-that-evoke-insane-mds-stores-disk-read-activity
+https://medium.com/devops-one-problem-at-a-time/curing-macs-high-cpu-fan-noise-heat-6b567cb81ea0
+https://wiert.me/2021/04/19/spotlight-taking-200-cpu/
+
+Интересный сайт с разными нюансами (и софтом) для мака:
+https://eclecticlight.co/

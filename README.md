@@ -26,7 +26,7 @@
 
 ## Docker
 
-[deployer](/docker.md)
+[docker](/docker.md)
 
 ## .htaccess
 
